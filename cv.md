@@ -15,14 +15,6 @@ A results-oriented Software Engineering student with a strong logical and system
 
 ---
 
-## Education Timeline
-
-- 2024 - 2028
-  - Belarusian-Russian University — Software Engineering
-
-- 2022 - 2024
-  - Lyceum of Belarusian-Russian University — Economics Class (Advanced Math & English)
-
 ## Skills & Competencies
 
 - **Technical Skills:** HTML, .Net, C#, Presentation design
@@ -46,3 +38,49 @@ Effectively assisted customers with order pickups, promptly resolving any issues
 *2025*
 
 Provided friendly and efficient service to guests, addressing customer concerns and resolving conflicts to maintain high satisfaction levels.
+
+## Code Example & Projects
+
+Below is an example of code from my course work:
+
+```csharp
+private void EditButton_Click(object sender, RoutedEventArgs e)
+{
+    var selected = MembershipsGrid.SelectedItem as Membership;
+    if (selected == null) return;
+
+    var dialog = new MembershipEditWindow(selected);
+    if (dialog.ShowDialog() == true)
+    {
+        _dataService.SaveMembership(_memberships);
+        LoadMemberships();
+    }
+}
+```
+
+---
+
+## Courses and training
+
+* Kim's school of Presentation design - PowerPointNinjaaCourses (complited)
+* HTML for Beginners — YouTube playlist (completed)
+* VS Code Hacks — Habr.com (explored)
+
+---
+
+## Languages
+
+* BY Belarusian: Native
+* RU Russian: Native
+* EN English: Upper-intermediate (B2) — actively used for studying technical documentation and communication.
+* IT Italian: Pre-intermediate (A2)
+
+---
+
+## Education Timeline
+
+- 2024 - 2028
+  - Belarusian-Russian University — Software Engineering
+
+- 2022 - 2024
+  - Lyceum of Belarusian-Russian University — Economics Class (Advanced Math & English)
