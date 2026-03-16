@@ -5,10 +5,13 @@
 }
 @font-face {
   font-family: "Metropolis";
-  src: url("fonts/Metropolis-SemiBold.otf") format("truetype");
-  font-weight: 400;
+  src:
+    url("fonts/Metropolis-SemiBold.otf") format("opentype"),
+    url("fonts/Metropolis-Black.otf") format("opentype"),
+    url("fonts/Metropolis-Medium.otf") format("opentype"),
+    url("fonts/Metropolis-ExtraLight.otf") format("opentype"),
+    url("fonts/Metropolis-Regular.otf") format("opentype");
 }
-
 header {
   display: flex;
   width: 1440px;
@@ -33,7 +36,7 @@ nav {
   font-feature-settings:
     "liga" off,
     "clig" off;
-  font-family: Metropolis-SemiBold;
+  font-family: Metropolis;
   font-size: 12px;
   font-style: normal;
   font-weight: 600;
@@ -44,9 +47,12 @@ nav {
 a {
   text-decoration: none;
 }
-
+button {
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
 .button {
-  all: unset;
   cursor: pointer;
   background: #ed017f;
 
@@ -60,11 +66,9 @@ a {
   line-height: 20px;
   letter-spacing: 2px;
 }
-
 .button-small {
   border-color: #ed017f;
   background: #ed017f;
-
   padding: 8px 20px;
   align-items: flex-start;
   color: #fff;
@@ -74,10 +78,113 @@ a {
     "clig" off;
   font-family: Rubik;
 }
-
 .container {
   background-image: url("public/Background.png");
   background-repeat: no-repeat;
   background-position: top right;
+  min-height: 768px;
+  display: flex;
+  flex-direction: column;
 }
 
+.hero-section {
+  padding: 100px 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.hero {
+  display: flex;
+  width: 453px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero h1 {
+  align-self: stretch;
+  color: var(--black-100, #010101);
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family: "Metropolis Black";
+  font-size: 63px;
+  font-weight: 900;
+  line-height: 68px;
+}
+.hero p {
+  padding-top: 24px;
+  padding-bottom: 38px;
+  width: 380px;
+  color: var(--black-60, #676767);
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family: "Metropolis";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.btn {
+  width: 180px;
+  height: 46px;
+  padding: 13px 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  text-align: center;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family: "Metropolis";
+  font-size: 12px;
+  font-weight: 200;
+  line-height: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.btn-pink {
+  background-color: #ed017f;
+  border-color: #ed017f;
+  color: #fff;
+}
+.btn-white {
+  border: 1px solid #ed017f;
+  background-color: #fff;
+  color: #ed017f;
+
+  white-space: nowrap;
+}
+.hero-buttons {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding-bottom: 0;
+}
+
+.hero-bottom {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.hero-bottom p {
+  color: var(--black-100, #010101);
+  text-align: center;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family: Metropolis;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 1px;
+}
+
+.vertical-line {
+  height: 24px;
+  width: 0;
+  border: 1px solid rgba(0, 0, 0, 20%);
+}
