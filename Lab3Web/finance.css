@@ -28,11 +28,7 @@ nav {
 }
 .nav-item {
   text-decoration: none;
-  color: var(--black-100, #010101);
-  font-feature-settings:
-    "liga" off,
-    "clig" off;
-  color: var(--black-100, #010101);
+  color: #010101;
   font-feature-settings:
     "liga" off,
     "clig" off;
@@ -45,6 +41,7 @@ nav {
   text-transform: uppercase;
 }
 a {
+  color: #010101;
   text-decoration: none;
 }
 button {
@@ -85,6 +82,7 @@ button {
   min-height: 768px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .hero-section {
@@ -187,4 +185,36 @@ button {
   height: 24px;
   width: 0;
   border: 1px solid rgba(0, 0, 0, 20%);
+}
+
+.roundbtn {
+  display: flex;
+  width: 205px;
+  height: 71px;
+  padding: 0 27px;
+  align-items: center;
+  gap: 19px;
+  border-radius: 55px;
+  background: #fff;
+  box-shadow: 4px 4px 58px 0 rgba(0, 0, 0, 0.12);
+  position: absolute;
+  color: #343434;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family: "Metropolis";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.rndbtn1 {
+  top: 136px;
+  left: 626px;
+}
+
+.rndbtn2 {
+  top: 256px;
+  left: 1179px;
 }
