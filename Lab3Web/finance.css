@@ -391,3 +391,188 @@ button {
   margin-left: 10px;
   font-size: 22px;
 }
+.services {
+  background-color: rgb(252, 224, 239, 0.2);
+  display: flex;
+  width: 1440px;
+  height: 818px;
+  padding: 106px 135px;
+  flex-direction: column;
+  align-items: center;
+  gap: 42px;
+
+  font-family: "Metropolis";
+  margin: 0 auto;
+}
+
+.services h3 {
+  color: #343434;
+  text-align: center;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+
+  font-family: "Metropolis";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 43px;
+}
+
+.services p {
+  color: #999;
+  text-align: center;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+
+  font-family: "Metropolis";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.service-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+}
+
+.service-footer h4 {
+  padding-top: 22px;
+  color: #363940;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family: "Metropolis";
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 35px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.arrow-btn {
+  width: 37px;
+  height: 37px;
+}
+
+.arrow-btn:hover {
+  background-color: #d12053;
+  color: #fff;
+}
+.results {
+  height: 690px;
+
+  display: flex;
+  width: 1440px;
+  padding: 102px 135px;
+  flex-direction: column;
+  align-items: center;
+  gap: 55px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.results h3 {
+  color: #343434;
+  text-align: center;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family: "Metropolis";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 43px;
+  margin: 0;
+}
+
+.results-desc {
+  color: #999;
+  text-align: center;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family: "Metropolis";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  margin: 0;
+  width: 550px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 172px);
+  justify-content: space-between;
+  width: 100%;
+  row-gap: 55px;
+  align-items: center;
+}
+
+.stat-item {
+  display: flex;
+  width: 172px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.results h2 {
+  color: #343434;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family: "Metropolis";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 43px;
+  margin: 0;
+}
+
+.results h2.highlight {
+  color: #ed017f;
+}
+
+.results h2 span {
+  font-size: 30px;
+}
+
+.results p {
+  color: #676767;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family: "Metropolis";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+  margin: 0;
+  width: 175px;
+  letter-spacing: 1px;
+  gap: 1px;
+}
