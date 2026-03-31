@@ -67,13 +67,25 @@ button {
   border-color: #ed017f;
   background: #ed017f;
   padding: 8px 20px;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   color: #fff;
   text-align: center;
   font-feature-settings:
     "liga" off,
     "clig" off;
   font-family: Rubik;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  gap: 10px;
+  border: none;
+  outline: none;
 }
 .container {
   background-image: url("public/Background.png");
@@ -575,4 +587,190 @@ button {
   width: 175px;
   letter-spacing: 1px;
   gap: 1px;
+}
+
+.newsletter {
+  background-color: rgb(252, 224, 239, 0.2);
+  display: flex;
+  width: 1440px;
+  height: 390px;
+  padding: 96px 477px;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.newsletter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 27px;
+}
+
+.newsletter-title {
+  color: #343434;
+  text-align: center;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family: "Metropolis";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 43px;
+}
+
+.newsletter-desc {
+  color: #999999;
+  text-align: center;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family: "Metropolis";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  max-width: 415px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0;
+}
+
+.newsletter-input {
+  display: flex;
+  width: 343px;
+  height: 46px;
+  padding: 12px 15px;
+  align-items: flex-start;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  background: #ffffff;
+  color: #343434;
+  font-family: "Metropolis";
+  font-size: 16px;
+  box-sizing: border-box;
+  outline: none;
+  margin-right: 10px;
+}
+
+.newsletter-input::placeholder {
+  color: #cccccc;
+}
+
+footer {
+  width: 1440px;
+  height: 340px;
+  position: relative;
+  background-color: #ffffff;
+}
+
+.footer-container {
+  display: flex;
+  position: absolute;
+  left: 135px;
+  top: 66px;
+  width: 1170px;
+  gap: 97px;
+}
+
+.footer-col {
+  width: 140px;
+  flex-shrink: 0;
+}
+
+.about-col {
+  width: 180px;
+  height: 110px;
+}
+
+.footer-col h4 {
+  color: #010101;
+  font-family: "Metropolis";
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  margin: 0 0 20px 0;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+}
+
+.footer-col p {
+  color: #676767;
+  font-family: "Metropolis";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  margin: 0;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+  color: #676767;
+  font-family: "Metropolis";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  text-decoration: none;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+}
+
+.social-links {
+  display: flex;
+  justify-content: flex-start;
+  gap: 16px;
+  margin-top: 37px;
+
+  width: auto;
+  max-width: fit-content;
+}
+
+.social-links img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.footer-contact {
+  margin-left: auto;
+}
+
+.phone-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.phone-number {
+  color: #010101;
+  font-family: "Metropolis";
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+}
+
+.phone-icon {
+  width: 20px;
+  height: 20px;
 }
