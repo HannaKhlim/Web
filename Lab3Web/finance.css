@@ -186,7 +186,7 @@ button {
     "liga" off,
     "clig" off;
   font-family: "Metropolis";
-  font-size: 15px;
+  font-size: 17px;
   font-style: normal;
   font-weight: 600;
   line-height: 22px;
@@ -234,7 +234,7 @@ button {
 .experience {
   width: 1440px;
   margin: 0;
-  padding: 75px;
+  padding: 80px 75px 75px;
   background-color: #ffffff;
 }
 
@@ -264,8 +264,8 @@ button {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 85px;
-  row-gap: 33px;
-  margin-top: 20px;
+  row-gap: 30px;
+  margin-top: -5px;
 }
 
 .card {
@@ -361,7 +361,7 @@ button {
   display: flex;
   flex-direction: column;
   padding-right: 5%;
-  padding-top: 105.5px;
+  padding-top: 108px;
 }
 
 .glance-content h3 {
@@ -470,7 +470,7 @@ button {
 }
 
 .service-footer h4 {
-  padding-top: 22px;
+  padding-top: 20px;
   color: #363940;
   font-feature-settings:
     "liga" off,
@@ -605,7 +605,7 @@ button {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  gap: 27px;
+  gap: 30px;
 }
 
 .newsletter-title {
@@ -718,7 +718,7 @@ footer {
 }
 
 .footer-col ul li {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .footer-col ul li a {
@@ -731,6 +731,7 @@ footer {
   font-feature-settings:
     "liga" off,
     "clig" off;
+  white-space: nowrap;
 }
 
 .social-links {
@@ -747,6 +748,7 @@ footer {
   width: 24px;
   height: 24px;
   display: block;
+  align-items: start;
 }
 
 .footer-contact {
