@@ -16,7 +16,8 @@ header {
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 20px;
 }
 nav {
   display: flex;
@@ -603,6 +604,7 @@ button {
   align-items: center;
   width: 100%;
   gap: 30px;
+  padding: 0px;
 }
 
 .newsletter-title {
@@ -672,6 +674,7 @@ footer {
   gap: 30px;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 74px 275px;
 }
 
 .footer-col h4 {
@@ -696,7 +699,7 @@ footer {
   font-feature-settings:
     "liga" off,
     "clig" off;
-  max-width: 300px;
+  max-width: 180px;
 }
 
 .footer-col ul {
@@ -739,8 +742,6 @@ footer {
   align-items: start;
 }
 
-/*FULL ADAPTIVE*/
-
 header,
 .experience,
 .services,
@@ -757,7 +758,6 @@ footer,
 body {
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
 .menu-toggle,
@@ -827,39 +827,39 @@ body {
     padding: 0 16px;
   }
   .container {
-    background-image: none !important;
+    background-image: none;
     min-height: auto;
     padding-bottom: 40px;
-    width: 100% !important;
+    width: 100%;
   }
 
   .hero-section {
-    padding: 20px !important;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
     gap: 10px;
   }
 
   .hero {
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 100%;
+    max-width: 100%;
     align-items: center;
     text-align: center;
     margin-top: 20px;
-    padding: 0 !important;
+    padding: 0;
   }
 
   .roundbtn {
-    position: static !important;
-    display: inline-flex !important;
-    width: auto !important;
+    position: static;
+    display: inline-flex;
+    width: auto;
     min-width: 180px;
     height: 60px;
-    margin: 10px !important;
+    margin: 10px;
     justify-content: center;
     flex: 0 1 auto;
   }
@@ -871,15 +871,15 @@ body {
   }
 
   .hero p {
-    width: 100% !important;
+    width: 100%;
     max-width: 600px;
     margin: 0 auto;
     padding: 15px 0;
   }
 
   .hero-buttons {
-    display: flex !important;
-    flex-direction: row !important;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     gap: 15px;
     width: 100%;
@@ -887,28 +887,27 @@ body {
   }
 
   .btn {
-    width: 180px !important;
-    margin: 0 !important;
+    width: 180px;
+    margin: 0;
   }
-
   .partners-section {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 40px 20px !important;
-    height: auto !important;
+    width: 100%;
+    max-width: 100%;
+    padding: 40px 20px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
   .logos-container {
-    width: 100% !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 30px !important;
-    padding: 0 !important;
-    margin: 0 !important;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
   }
 
   .logos-container img {
@@ -919,7 +918,7 @@ body {
 
   .cards,
   .services-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr);
     padding: 0 20px;
     justify-content: space-between;
     width: 100%;
@@ -930,22 +929,22 @@ body {
   .results,
   .newsletter {
     width: 100%;
-    height: auto !important;
-    padding: 0;
+    height: auto;
+    padding: 70px;
   }
 
   .at-a-glance {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    width: 100% !important;
-    height: auto !important;
-    padding: 40px 20px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 40px 20px;
     box-sizing: border-box;
   }
 
   .glance-image {
-    width: 100% !important;
+    width: 100%;
     max-width: 600px;
     margin: 0 0 30px;
   }
@@ -958,27 +957,27 @@ body {
   }
 
   .glance-content {
-    width: 100% !important;
-    max-width: 800px !important;
-    padding: 0 !important;
-    text-align: center !important;
+    width: 100%;
+    max-width: 800px;
+    padding: 0;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
   .glance-content h2 {
-    font-size: 28px !important;
-    line-height: 34px !important;
-    margin-bottom: 20px !important;
+    font-size: 28px;
+    line-height: 34px;
+    margin-bottom: 20px;
     width: 100%;
   }
 
   .glance-content p {
-    font-size: 16px !important;
-    line-height: 26px !important;
+    font-size: 16px;
+    line-height: 26px;
     color: #666;
-    margin-bottom: 25px !important;
+    margin-bottom: 25px;
     width: 100%;
     max-width: 100%;
   }
@@ -998,49 +997,75 @@ body {
   }
 
   .results-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr);
     justify-items: center;
   }
 
   .footer-container {
     width: 100%;
     justify-content: left;
+    padding: 70px 0;
+    gap: 24px;
   }
 }
 
 @media (max-width: 600px) {
+  .experience,
+  .services,
+  .results,
+  .newsletter {
+    padding: 0;
+  }
+
+  .button-hide {
+    display: none;
+  }
   .glance-content h2 {
-    font-size: 24px !important;
+    font-size: 24px;
   }
 
   .glance-content p {
-    font-size: 14px !important;
-    line-height: 22px !important;
+    font-size: 14px;
+    line-height: 22px;
   }
 
   .cards,
   .services-grid,
   .results-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr;
     width: 100%;
   }
 
   .hero-buttons {
-    flex-direction: column !important;
+    flex-direction: column;
     align-items: center;
   }
 
   .roundbtn {
-    width: 90% !important;
+    width: 90%;
   }
 
   .btn {
-    width: 90% !important;
+    width: 90%;
   }
   .stat-item {
     align-items: center;
   }
   .stat-item p {
     width: fit-content;
+  }
+  .newsletter-container {
+    padding: 0;
+  }
+  .services h3,
+  .results h3 {
+    padding-top: 20px;
+  }
+  .newsletter {
+    padding: 20px 0;
+  }
+
+  .newsletter-input {
+    font-size: 12px;
   }
 }
