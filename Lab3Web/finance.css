@@ -19,6 +19,57 @@ header {
   justify-content: space-between;
   padding: 20px;
 }
+
+/* Анимация для логотипа: появление на весь экран + постоянная розовая подсветка */
+header img:first-child {
+  width: 80px;
+  transition: all 0.5s ease;
+  animation:
+    logoEntrance 1.2s ease-out forwards,
+    logoGlow 2s infinite alternate;
+  position: relative;
+  z-index: 100;
+}
+
+@keyframes logoEntrance {
+  0% {
+    width: 100vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    opacity: 1;
+  }
+  70% {
+    width: 100vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    opacity: 1;
+  }
+  100% {
+    width: 80px;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: translate(0, 0);
+    z-index: auto;
+    opacity: 1;
+  }
+}
+
+@keyframes logoGlow {
+  0% {
+    filter: drop-shadow(0 0 2px #ed017f) drop-shadow(0 0 5px #ed017f);
+  }
+  100% {
+    filter: drop-shadow(0 0 8px #ed017f) drop-shadow(0 0 15px #ff69b4);
+  }
+}
+
 nav {
   display: flex;
   width: 620px;
@@ -39,7 +90,17 @@ nav {
   line-height: 20px;
   letter-spacing: 2px;
   text-transform: uppercase;
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
 }
+
+/* Анимация для nav-item: подчёркивание и подсветка */
+.nav-item:hover {
+  color: #ed017f;
+  border-bottom: 2px solid #ed017f;
+  transform: translateY(-2px);
+}
+
 a {
   color: #010101;
   text-decoration: none;
@@ -48,17 +109,30 @@ button {
   box-shadow: none;
   border: none;
   outline: none;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
 }
+
+/* Единая анимация для всех кнопок: увеличение и розовый контур */
+button:hover,
+.button:hover,
+.btn:hover,
+.button-small:hover,
+.roundbtn:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 0 2px #ed017f,
+    0 4px 12px rgba(237, 1, 127, 0.3);
+}
+
 .button {
   cursor: pointer;
   background: #ed017f;
-
   border-radius: 4px;
   display: flex;
   gap: 10px;
   font-size: 12px;
   font-style: normal;
-
   font-weight: 500;
   line-height: 20px;
   letter-spacing: 2px;
@@ -164,7 +238,6 @@ button {
   border: 1px solid #ed017f;
   background-color: #fff;
   color: #ed017f;
-
   white-space: nowrap;
 }
 .hero-buttons {
@@ -229,7 +302,7 @@ button {
 
 .rndbtn2 {
   top: 256px;
-  left: 1179px;
+  left: 81%;
 }
 
 .experience {
@@ -271,12 +344,25 @@ button {
 
 .card {
   padding: 24px;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.card:hover {
+  transform: scale(1.05) translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 16px;
 }
 
 .card img {
   width: 37px;
   height: 37px;
   margin-bottom: 18px;
+  transition: transform 0.6s ease-in-out;
+}
+
+.card:hover img {
+  transform: rotateY(180deg);
 }
 
 .card h3 {
@@ -286,6 +372,11 @@ button {
   font-weight: 700;
   line-height: 22px;
   margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.card:hover h3 {
+  color: #ed017f;
 }
 
 .card p {
@@ -310,7 +401,6 @@ button {
 .partners-section h2 {
   margin-bottom: 78px;
   text-transform: uppercase;
-
   color: #343434;
   text-align: center;
   font-feature-settings:
@@ -330,11 +420,20 @@ button {
   align-self: stretch;
   width: 100%;
 }
+
+/* Логотипы: вращение и белая подсветка */
 .logos-container img {
   object-fit: contain;
   width: 190px;
   height: 108px;
   flex-shrink: 0;
+  transition: all 0.4s ease-in-out;
+  filter: brightness(0.95);
+}
+
+.logos-container img:hover {
+  transform: rotate(5deg) scale(1.08);
+  filter: brightness(1.2) drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
 }
 
 .at-a-glance {
@@ -347,6 +446,8 @@ button {
 .glance-image {
   margin-right: 110px;
   line-height: 0;
+  overflow: hidden;
+  border-radius: 20px;
 }
 
 .glance-image img {
@@ -354,6 +455,11 @@ button {
   width: 618px;
   display: block;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.glance-image img:hover {
+  transform: scale(1.02);
 }
 
 .glance-content {
@@ -385,10 +491,11 @@ button {
   max-width: 460px;
 }
 
+/* Анимация для read more: ссылка + картинка */
 .read-more {
   display: flex;
   align-items: center;
-
+  gap: 8px;
   color: #ed017f;
   font-feature-settings:
     "liga" off,
@@ -398,12 +505,25 @@ button {
   font-style: normal;
   font-weight: 400;
   line-height: 26.583px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.read-more:hover {
+  transform: translateX(10px);
+  letter-spacing: 0.5px;
 }
 
 .read-more .arrow {
   margin-left: 10px;
   font-size: 22px;
+  transition: transform 0.3s ease;
 }
+
+.read-more:hover .arrow {
+  transform: translateX(6px);
+}
+
 .services {
   background-color: rgb(252, 224, 239, 0.2);
   display: flex;
@@ -413,7 +533,6 @@ button {
   flex-direction: column;
   align-items: center;
   gap: 42px;
-
   font-family: "Metropolis";
   margin: 0 auto;
 }
@@ -424,7 +543,6 @@ button {
   font-feature-settings:
     "liga" off,
     "clig" off;
-
   font-family: "Metropolis";
   font-size: 36px;
   font-style: normal;
@@ -438,7 +556,6 @@ button {
   font-feature-settings:
     "liga" off,
     "clig" off;
-
   font-family: "Metropolis";
   font-size: 16px;
   font-style: normal;
@@ -455,6 +572,11 @@ button {
 .service-card {
   display: flex;
   flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.service-card:hover {
+  transform: translateY(-12px);
 }
 
 .service-image {
@@ -462,7 +584,19 @@ button {
   height: 100%;
   object-fit: cover;
   display: block;
+  overflow: hidden;
+  border-radius: 12px;
 }
+
+.service-image img {
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-image img {
+  transform: scale(1.07);
+}
+
 .service-footer {
   display: flex;
   justify-content: space-between;
@@ -483,20 +617,26 @@ button {
   line-height: 35px;
   letter-spacing: 1px;
   text-transform: uppercase;
+  transition: color 0.25s;
+}
+
+.service-card:hover .service-footer h4 {
+  color: #ed017f;
 }
 
 .arrow-btn {
   width: 37px;
   height: 37px;
+  transition: all 0.35s cubic-bezier(0.34, 1.2, 0.64, 1);
 }
 
-.arrow-btn:hover {
-  background-color: #d12053;
-  color: #fff;
+.service-card:hover .arrow-btn {
+  transform: rotate(90deg) scale(1.15);
+  filter: drop-shadow(0 0 6px #ed017f);
 }
+
 .results {
   height: 690px;
-
   display: flex;
   width: 1440px;
   padding: 102px 135px;
@@ -544,11 +684,42 @@ button {
   align-items: center;
 }
 
+/* Цифры крутятся вокруг своей оси, текст вылетает слева направо */
 .stat-item {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.stat-item:hover h2 {
+  animation: rotateNumber 0.6s ease-in-out;
+}
+
+.stat-item:hover p {
+  animation: slideInFromLeft 0.5s ease-out;
+}
+
+@keyframes rotateNumber {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .results h2 {
@@ -562,6 +733,7 @@ button {
   font-weight: 700;
   line-height: 43px;
   margin: 0;
+  display: inline-block;
 }
 
 .results h2.highlight {
@@ -641,6 +813,7 @@ button {
   justify-content: center;
 }
 
+/* Крутая анимация для поля ввода email */
 .newsletter-input {
   display: flex;
   width: 60%;
@@ -655,10 +828,26 @@ button {
   font-size: 16px;
   box-sizing: border-box;
   outline: none;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.newsletter-input:focus {
+  border-color: #ed017f;
+  box-shadow:
+    0 0 0 4px rgba(237, 1, 127, 0.2),
+    0 0 0 8px rgba(237, 1, 127, 0.1);
+  transform: scaleX(1.02) scaleY(1.05);
+  background: linear-gradient(145deg, #ffffff, #fff5f9);
 }
 
 .newsletter-input::placeholder {
   color: #cccccc;
+  transition: all 0.3s ease;
+}
+
+.newsletter-input:focus::placeholder {
+  opacity: 0.5;
+  transform: translateX(5px);
 }
 
 footer {
@@ -687,6 +876,11 @@ footer {
   font-feature-settings:
     "liga" off,
     "clig" off;
+  transition: color 0.2s;
+}
+
+.footer-col:hover h4 {
+  color: #ed017f;
 }
 
 .footer-col p {
@@ -723,6 +917,13 @@ footer {
     "liga" off,
     "clig" off;
   white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #ed017f;
+  transform: translateX(6px);
+  display: inline-block;
 }
 
 .social-links {
@@ -730,7 +931,6 @@ footer {
   justify-content: flex-start;
   gap: 16px;
   margin-top: 37px;
-
   width: auto;
   max-width: fit-content;
 }
@@ -739,7 +939,13 @@ footer {
   width: 24px;
   height: 24px;
   display: block;
-  align-items: start;
+  transition: all 0.25s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+.social-links img:hover {
+  transform: translateY(-5px) scale(1.2);
+  filter: brightness(0) saturate(100%) invert(27%) sepia(89%) saturate(3000%)
+    hue-rotate(315deg);
 }
 
 header,
