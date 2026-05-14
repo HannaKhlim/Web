@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IPDC - Catalog</title>
+    <link rel="stylesheet" href="finance.css">
+    <style>
+        /* Дополнительные стили для фильтров */
+        .controls { padding: 20px 75px; display: flex; flex-wrap: wrap; gap: 15px; background: #f9f9f9; }
+        .search-input { padding: 10px; border-radius: 4px; border: 1px solid #ccc; width: 300px; }
+        .methods-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 15px; width: 100%; }
+        #services-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; padding: 40px 75px; }
+        .no-results { grid-column: 1/-1; text-align: center; color: #ed017f; font-size: 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="public/logo.png" alt="Logo">
+        <nav>
+            <div class="nav-item"><a href="finance.html">HOME</a></div>
+            <div class="nav-item"><a href="#">CATALOG</a></div>
+        </nav>
+    </header>
+
+    <section class="controls">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search by name or description...">
+        <select id="sortSelect" class="btn-white" style="padding: 5px 10px; cursor:pointer;">
+            <option value="default">Sort by...</option>
+            <option value="name">Name (A-Z)</option>
+            <option value="rate">Interest Rate (Low to High)</option>
+        </select>
+
+        <div class="methods-grid" id="methodsButtons">
+            </div>
+    </section>
+
+    <div id="services-container"></div>
+
+    <script src="catalog.js"></script>
+</body>
+</html>
