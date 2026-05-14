@@ -20,7 +20,6 @@ header {
   padding: 20px;
 }
 
-/* Анимация логотипа: переливы от белого к розовому и обратно */
 header img:first-child {
   width: 80px;
   transition: all 0.3s ease;
@@ -67,7 +66,6 @@ nav {
   transition: all 0.3s ease;
 }
 
-/* Анимация для nav-item: подчёркивание и подсветка */
 .nav-item:hover {
   color: #ed017f;
   border-bottom: 2px solid #ed017f;
@@ -86,7 +84,6 @@ button {
   transition: all 0.25s ease-in-out;
 }
 
-/* Единая анимация для всех кнопок: увеличение и розовый контур */
 button:hover,
 .button:hover,
 .btn:hover,
@@ -394,7 +391,6 @@ button:hover,
   width: 100%;
 }
 
-/* Логотипы: вращение и белая подсветка */
 .logos-container img {
   object-fit: contain;
   width: 190px;
@@ -464,7 +460,6 @@ button:hover,
   max-width: 460px;
 }
 
-/* Анимация для read more: ссылка + картинка */
 .read-more {
   display: flex;
   align-items: center;
@@ -657,7 +652,6 @@ button:hover,
   align-items: center;
 }
 
-/* Цифры крутятся вокруг своей оси, текст вылетает слева направо */
 .stat-item {
   display: flex;
   flex-direction: column;
@@ -733,7 +727,6 @@ button:hover,
   gap: 1px;
 }
 
-/* Newsletter: вылетает/проявляется креативно */
 .newsletter {
   background-color: rgb(252, 224, 239, 0.2);
   display: flex;
@@ -864,7 +857,6 @@ button:hover,
   }
 }
 
-/* Крутая анимация для поля ввода email */
 .newsletter-input {
   display: flex;
   width: 60%;
@@ -901,7 +893,6 @@ button:hover,
   transform: translateX(5px);
 }
 
-/* Анимация для кнопки подписки в Newsletter */
 .newsletter-form .button-small {
   animation: buttonPulse 1.5s infinite;
 }
