@@ -22,7 +22,7 @@ const container = document.getElementById('services-container');
 function renderCards(data) {
     container.innerHTML = '';
     if (data.length === 0) {
-        container.innerHTML = '<div class="no-results">No services found for your criteria.</div>'; // [cite: 85]
+        container.innerHTML = '<div class="no-results">No services found for your criteria.</div>'; 
         return;
     }
 

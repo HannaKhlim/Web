@@ -1,0 +1,36 @@
+.controls {
+  padding: 20px 75px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  background: #f9f9f9;
+}
+
+.search-input {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 300px;
+}
+
+.methods-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 15px;
+  width: 100%;
+}
+
+#services-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 40px 75px;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #ed017f;
+  font-size: 20px;
+}
