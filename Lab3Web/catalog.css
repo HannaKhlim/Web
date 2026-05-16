@@ -34,3 +34,62 @@
   color: #ed017f;
   font-size: 20px;
 }
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.card-btn {
+  flex: 1;
+  height: 32px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+#pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 20px 75px;
+}
+
+#pagination button {
+  min-width: 36px;
+  height: 36px;
+}
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #ed017f;
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-size: 14px;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+
+.toast-hide {
+  opacity: 0;
+}
+
+#favorites-container,
+#cart-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 40px 75px;
+}
+
+.cart-summary-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+  padding: 20px 75px 40px;
+}

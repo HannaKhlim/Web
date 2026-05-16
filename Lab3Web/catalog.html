@@ -8,26 +8,32 @@
 </head>
 <body>
     <header>
-        <img src="public/logo.png" alt="Logo">
+        <a href="finance.html"><img src="public/logo.png" alt="Logo"></a>
         <nav>
             <div class="nav-item"><a href="finance.html">HOME</a></div>
             <div class="nav-item"><a href="#">CATALOG</a></div>
+            <div class="nav-item"><a href="favorites.html">FAVOURITES</a></div>
+            <div class="nav-item"><a href="cart.html">CART</a></div>
         </nav>
     </header>
 
     <section class="controls">
         <input type="text" id="searchInput" class="search-input" placeholder="Search by name or description...">
         <select id="sortSelect" class="btn-white" style="padding: 5px 10px; cursor:pointer;">
-            <option value="default">Sort by...</option>
-            <option value="name">Name (A-Z)</option>
-            <option value="rate">Interest Rate (Low to High)</option>
+            <option value="">Sort by...</option>
+            <option value="name|asc">Name (A-Z)</option>
+            <option value="name|desc">Name (Z-A)</option>
+            <option value="rate|asc">Rate (Low → High)</option>
+            <option value="rate|desc">Rate (High → Low)</option>
         </select>
-
-        <div class="methods-grid" id="methodsButtons">
-            </div>
+        <input type="number" id="rateMin" class="search-input" placeholder="Rate min %" style="width:130px">
+        <input type="number" id="rateMax" class="search-input" placeholder="Rate max %" style="width:130px">
+        <div class="methods-grid" id="categoryButtons"></div>
+        <div class="methods-grid" id="methodsButtons"></div>
     </section>
 
     <div id="services-container"></div>
+    <div id="pagination"></div>
 
     <script src="catalog.js"></script>
 </body>
