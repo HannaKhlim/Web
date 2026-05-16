@@ -32,20 +32,29 @@ function setupMethodButtons() {
         { label: "Filter: Popular",  func: () => currentData = servicesData.filter(i => i.popular) },
         { label: "Sort: Low Rate",   func: () => currentData = [...servicesData].sort((a, b) => a.rate - b.rate) },
         { label: "Map: Promo Info",  func: () => {
-            alert("Names mapped to uppercase in console");
-            console.log(servicesData.map(i => i.name.toUpperCase()));
+            currentData = servicesData.map(i => ({
+                ...i,
+                name: i.name.toUpperCase(),
+                desc: '🔥 PROMO: ' + i.desc
+            }));
         }},
         { label: "Find: High Rate",  func: () => {
             const found = servicesData.find(i => i.rate > 13);
-            alert(`Found: ${found ? found.name : 'None'}`);
+            currentData = found ? [found] : [];
         }},
         { label: "Reduce: Avg Rate", func: () => {
             const avg = servicesData.reduce((acc, i) => acc + i.rate, 0) / servicesData.length;
-            alert(`Average Interest Rate: ${avg.toFixed(2)}%`);
+            currentData = servicesData
+                .filter(i => i.rate > avg)
+                .map(i => ({ ...i, desc: `📊 Above avg (${avg.toFixed(1)}%): ${i.desc}` }));
         }},
-        { label: "Some: Above 10%",  func: () => alert(`Any > 10%? ${servicesData.some(i => i.rate > 10)}`) },
-        { label: "Every: Low Rate?", func: () => alert(`All > 3%? ${servicesData.every(i => i.rate > 3)}`) },
-        { label: "Slice: First 5",   func: () => currentData = servicesData.slice(0, 5) },
+        { label: "Some: Above 10%",  func: () => {
+            currentData = servicesData.filter(i => i.rate > 10);
+        }},
+        { label: "Every: Low Rate?", func: () => {
+            currentData = servicesData.filter(i => i.rate > 3);
+        }},
+        { label: "Slice: First 5",   func: () => currentData = servicesData.slice(5, 10) },
         { label: "Reset Catalog",    func: () => currentData = [...servicesData] }
     ];
 
