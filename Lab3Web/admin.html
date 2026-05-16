@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPDC - Admin Panel</title>
+  <link rel="stylesheet" href="finance.css">
+  <link rel="stylesheet" href="catalog.css">
+</head>
+<body>
+  <header>
+    <a href="finance.html"><img src="public/logo.png" alt="Logo"></a>
+    <nav>
+      <div class="nav-item"><a href="finance.html">HOME</a></div>
+      <div class="nav-item"><a href="catalog.html">CATALOG</a></div>
+      <div class="nav-item"><a href="favorites.html">FAVOURITES</a></div>
+      <div class="nav-item"><a href="cart.html">CART</a></div>
+      <div class="nav-item"><a href="reviews.html">REVIEWS</a></div>
+      <div class="nav-item" id="nav-auth"><a href="auth.html">SIGN IN</a></div>
+      <div class="nav-item" id="nav-admin" style="display:none"><a href="#">ADMIN</a></div>
+    </nav>
+  </header>
+
+  <main class="admin-wrapper">
+    <div id="admin-guard" style="display:none" class="auth-box">
+      <p class="field-error">Access denied. Admin only.</p>
+      <a href="auth.html" class="btn-pink btn-full" style="text-align:center;display:block;padding:12px">Sign In</a>
+    </div>
+
+    <div id="admin-content" style="display:none">
+
+      <!-- ── Tabs ── -->
+      <div class="auth-tabs" style="max-width:100%;margin-bottom:24px">
+        <button class="tab-btn active" data-tab="services">Services</button>
+        <button class="tab-btn" data-tab="reviews">Reviews</button>
+      </div>
+
+      <!-- ══════ SERVICES TAB ══════ -->
+      <section id="tab-services" class="admin-section">
+        <div class="admin-two-col">
+
+          <!-- Add / Edit form -->
+          <div class="auth-box">
+            <h3 id="svc-form-title" class="section-title">Add Service</h3>
+            <form id="svc-form" class="auth-form" novalidate>
+              <input type="hidden" id="svc-id">
+              <div class="form-group">
+                <label class="form-label">Name <span class="req">*</span></label>
+                <input class="form-control" type="text" id="svc-name">
+                <span class="field-error" id="err-svc-name"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Category <span class="req">*</span></label>
+                <input class="form-control" type="text" id="svc-category">
+                <span class="field-error" id="err-svc-category"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Rate (%) <span class="req">*</span></label>
+                <input class="form-control" type="number" id="svc-rate" step="0.1" min="0">
+                <span class="field-error" id="err-svc-rate"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Min Amount ($) <span class="req">*</span></label>
+                <input class="form-control" type="number" id="svc-amount" min="0">
+                <span class="field-error" id="err-svc-amount"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Term (months) <span class="req">*</span></label>
+                <input class="form-control" type="number" id="svc-term" min="1">
+                <span class="field-error" id="err-svc-term"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Description <span class="req">*</span></label>
+                <textarea class="form-control" id="svc-desc" rows="2"></textarea>
+                <span class="field-error" id="err-svc-desc"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Image path <span class="req">*</span></label>
+                <input class="form-control" type="text" id="svc-img" placeholder="public/service1.png">
+                <span class="field-error" id="err-svc-img"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label checkbox-label">
+                  <input type="checkbox" id="svc-popular"> Popular
+                </label>
+              </div>
+              <div class="form-row" style="gap:8px">
+                <button type="submit" class="btn-pink" id="btn-svc-submit" disabled>Save</button>
+                <button type="button" class="btn-white" id="btn-svc-cancel" style="display:none">Cancel</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Services table -->
+          <div>
+            <h3 class="section-title">All Services</h3>
+            <div id="svc-table-wrap" class="admin-table-wrap"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════ REVIEWS TAB ══════ -->
+      <section id="tab-reviews" class="admin-section" style="display:none">
+        <div class="admin-filters">
+          <select class="form-control" id="filter-rev-service" style="max-width:240px">
+            <option value="">All services</option>
+          </select>
+          <select class="form-control" id="filter-rev-user" style="max-width:240px">
+            <option value="">All users</option>
+          </select>
+        </div>
+        <div id="admin-reviews-list" class="admin-table-wrap" style="margin-top:16px"></div>
+      </section>
+
+    </div><!-- /admin-content -->
+  </main>
+
+  <script src="shared.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

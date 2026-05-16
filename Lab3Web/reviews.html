@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPDC - Reviews</title>
+  <link rel="stylesheet" href="finance.css">
+  <link rel="stylesheet" href="catalog.css">
+</head>
+<body>
+  <header>
+    <a href="finance.html"><img src="public/logo.png" alt="Logo"></a>
+    <nav>
+      <div class="nav-item"><a href="finance.html">HOME</a></div>
+      <div class="nav-item"><a href="catalog.html">CATALOG</a></div>
+      <div class="nav-item"><a href="favorites.html">FAVOURITES</a></div>
+      <div class="nav-item"><a href="cart.html">CART</a></div>
+      <div class="nav-item"><a href="#">REVIEWS</a></div>
+      <div class="nav-item" id="nav-auth"><a href="auth.html">SIGN IN</a></div>
+      <div class="nav-item" id="nav-admin" style="display:none"><a href="admin.html">ADMIN</a></div>
+    </nav>
+  </header>
+
+  <main class="reviews-wrapper">
+    <div class="reviews-layout">
+
+      <!-- ── Leave a Review ── -->
+      <section class="auth-box">
+        <h2 class="section-title">Leave a Review</h2>
+        <div id="review-auth-note" class="field-error" style="margin-bottom:12px"></div>
+        <form id="review-form" class="auth-form" novalidate>
+          <div class="form-group">
+            <label class="form-label">Service <span class="req">*</span></label>
+            <select class="form-control" id="rev-service">
+              <option value="">— Select service —</option>
+            </select>
+            <span class="field-error" id="err-rev-service"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Rating <span class="req">*</span></label>
+            <div class="star-rating" id="star-rating">
+              <span data-val="1">★</span><span data-val="2">★</span>
+              <span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span>
+            </div>
+            <input type="hidden" id="rev-rating" value="0">
+            <span class="field-error" id="err-rev-rating"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Review text <span class="req">*</span> <small>(min 20 chars)</small></label>
+            <textarea class="form-control" id="rev-text" rows="4" placeholder="Share your experience..."></textarea>
+            <span class="field-hint" id="hint-rev-text">0 / 20</span>
+            <span class="field-error" id="err-rev-text"></span>
+          </div>
+          <button type="submit" class="btn-pink btn-full" id="btn-submit-review" disabled>Submit Review</button>
+        </form>
+      </section>
+
+      <!-- ── Reviews List ── -->
+      <section class="reviews-list-section">
+        <h2 class="section-title">All Reviews</h2>
+        <div class="form-group" style="max-width:300px">
+          <select class="form-control" id="filter-service">
+            <option value="">All services</option>
+          </select>
+        </div>
+        <div id="reviews-list"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="shared.js"></script>
+  <script src="reviews.js"></script>
+</body>
+</html>

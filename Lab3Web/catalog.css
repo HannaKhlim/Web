@@ -93,3 +93,279 @@
   gap: 24px;
   padding: 20px 75px 40px;
 }
+
+/* ═══════════════════════════════════════
+   AUTH / FORM STYLES
+═══════════════════════════════════════ */
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.auth-box {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 36px 40px;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.07);
+}
+
+.auth-tabs {
+  display: flex;
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: 28px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px;
+  background: none;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #888;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: color .2s, border-color .2s;
+}
+
+.tab-btn.active {
+  color: #ed017f;
+  border-bottom-color: #ed017f;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-control {
+  padding: 9px 13px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color .2s;
+}
+
+.form-control:focus {
+  border-color: #ed017f;
+}
+
+.field-error {
+  font-size: 12px;
+  color: #e00;
+  min-height: 16px;
+  margin-top: 3px;
+}
+
+.req {
+  color: #ed017f;
+}
+
+.nick-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.nick-row .form-control { flex: 1; }
+
+.nick-btn {
+  height: 38px;
+  padding: 0 14px;
+  background: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.nick-btn:hover { background: #e8e8e8; }
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.radio-group label {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.link-pink {
+  color: #ed017f;
+  text-decoration: none;
+}
+.link-pink:hover { text-decoration: underline; }
+
+.btn-full {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.btn-full:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.field-hint {
+  font-size: 11px;
+  color: #999;
+  margin-top: 3px;
+}
+
+/* ═══════════════════════════════════════
+   REVIEWS PAGE
+═══════════════════════════════════════ */
+.reviews-wrapper {
+  padding: 40px 75px;
+}
+
+.reviews-layout {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1a1a2e;
+}
+
+.star-rating {
+  display: flex;
+  gap: 6px;
+  font-size: 28px;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.star-rating span { color: #ccc; transition: color .15s; }
+.star-rating span.active,
+.star-rating span:hover { color: #ed017f; }
+
+.review-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 14px;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.review-stars { color: #ed017f; font-size: 16px; }
+
+.reviews-list-section { padding-top: 4px; }
+
+/* ═══════════════════════════════════════
+   ADMIN PANEL
+═══════════════════════════════════════ */
+.admin-wrapper {
+  padding: 40px 75px;
+}
+
+.admin-two-col {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.admin-section { }
+
+.admin-filters {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.admin-table-wrap {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
+  text-align: left;
+  vertical-align: top;
+}
+
+.admin-table th {
+  background: #f8f8f8;
+  font-weight: 700;
+}
+
+.admin-table tbody tr:hover {
+  background: #fef0f7;
+}
+
+.td-actions {
+  display: flex;
+  gap: 6px;
+  white-space: nowrap;
+}
+

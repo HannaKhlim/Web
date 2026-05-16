@@ -75,12 +75,34 @@ async function removeFromCart(id) {
 
 async function checkout() {
   const cart = await (await fetch(`${API_URL}/cart`)).json();
+  if (!cart.length) return;
+
+  const user  = getCurrentUser();
+  const total = cart.reduce((sum, i) => sum + i.minAmount * i.quantity, 0);
+
+  await fetch(`${API_URL}/orders`, {
+    method:  'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      userId:       user ? user.id       : null,
+      userNickname: user ? user.nickname : 'guest',
+      items: cart.map(i => ({
+        serviceId: i.serviceId,
+        name:      i.name,
+        quantity:  i.quantity,
+        minAmount: i.minAmount,
+      })),
+      total,
+      createdAt: new Date().toISOString(),
+    }),
+  });
+
   await Promise.all(cart.map(i => fetch(`${API_URL}/cart/${i.id}`, { method: 'DELETE' })));
+
   container.innerHTML = '';
   summary.innerHTML   = `
     <div style="text-align:center;padding:60px 75px;color:#ed017f;font-size:24px;font-weight:700">
       ✅ Order placed successfully! Thank you for choosing IPDC.
-    </div>`;
-}
+    </div>`;}
 
 loadCart();

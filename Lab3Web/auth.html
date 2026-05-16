@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPDC - Sign In / Register</title>
+  <link rel="stylesheet" href="finance.css">
+  <link rel="stylesheet" href="catalog.css">
+</head>
+<body>
+  <header>
+    <a href="finance.html"><img src="public/logo.png" alt="Logo"></a>
+    <nav>
+      <div class="nav-item"><a href="finance.html">HOME</a></div>
+      <div class="nav-item"><a href="catalog.html">CATALOG</a></div>
+      <div class="nav-item"><a href="favorites.html">FAVOURITES</a></div>
+      <div class="nav-item"><a href="cart.html">CART</a></div>
+      <div class="nav-item"><a href="reviews.html">REVIEWS</a></div>
+      <div class="nav-item" id="nav-auth"><a href="#">SIGN IN</a></div>
+      <div class="nav-item" id="nav-admin" style="display:none"><a href="admin.html">ADMIN</a></div>
+    </nav>
+  </header>
+
+  <main class="auth-wrapper">
+    <div class="auth-box">
+      <div class="auth-tabs">
+        <button class="tab-btn active" data-tab="login">Sign In</button>
+        <button class="tab-btn" data-tab="register">Register</button>
+      </div>
+
+      <!-- ── LOGIN ── -->
+      <form id="login-form" class="auth-form" novalidate>
+        <div class="form-group">
+          <label class="form-label">Email or Nickname <span class="req">*</span></label>
+          <input class="form-control" type="text" id="login-identity" autocomplete="username">
+          <span class="field-error" id="err-login-identity"></span>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password <span class="req">*</span></label>
+          <input class="form-control" type="password" id="login-password" autocomplete="current-password">
+          <span class="field-error" id="err-login-password"></span>
+        </div>
+        <button type="submit" class="btn-pink btn-full">Sign In</button>
+      </form>
+
+      <!-- ── REGISTER ── -->
+      <form id="register-form" class="auth-form" style="display:none" novalidate>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name <span class="req">*</span></label>
+            <input class="form-control" type="text" id="reg-firstName">
+            <span class="field-error" id="err-firstName"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name <span class="req">*</span></label>
+            <input class="form-control" type="text" id="reg-lastName">
+            <span class="field-error" id="err-lastName"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Patronymic</label>
+            <input class="form-control" type="text" id="reg-patronymic">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Email <span class="req">*</span></label>
+          <input class="form-control" type="email" id="reg-email" autocomplete="email">
+          <span class="field-error" id="err-email"></span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Phone (Belarus) <span class="req">*</span></label>
+          <input class="form-control" type="tel" id="reg-phone" placeholder="+375291234567">
+          <span class="field-error" id="err-phone"></span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Date of Birth <span class="req">*</span></label>
+          <input class="form-control" type="date" id="reg-birthDate">
+          <span class="field-error" id="err-birthDate"></span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Password mode <span class="req">*</span></label>
+          <div class="radio-group">
+            <label><input type="radio" name="pwMode" value="auto" checked> Auto-generate</label>
+            <label><input type="radio" name="pwMode" value="manual"> Enter manually</label>
+          </div>
+        </div>
+
+        <div id="manual-pw-fields" style="display:none">
+          <div class="form-group">
+            <label class="form-label">Password <span class="req">*</span></label>
+            <input class="form-control" type="password" id="reg-password" autocomplete="new-password">
+            <span class="field-error" id="err-password"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Confirm Password <span class="req">*</span></label>
+            <input class="form-control" type="password" id="reg-confirm" autocomplete="off">
+            <span class="field-error" id="err-confirm"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Nickname <span class="req">*</span></label>
+          <div class="nick-row">
+            <input class="form-control" type="text" id="reg-nickname" readonly>
+            <button type="button" class="btn-white nick-btn" id="btn-regen">↻ New</button>
+          </div>
+          <span class="field-error" id="err-nickname"></span>
+          <span class="field-hint" id="hint-nickname"></span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label checkbox-label">
+            <input type="checkbox" id="reg-agree">
+            I have read and agree to the
+            <a href="#" class="link-pink">User Agreement</a>
+            <span class="req">*</span>
+          </label>
+          <span class="field-error" id="err-agree"></span>
+        </div>
+
+        <button type="submit" class="btn-pink btn-full" id="btn-register" disabled>Register</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="shared.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>
