@@ -235,19 +235,5 @@
       "id": 2
     }
   ],
-  "cart": [
-    {
-      "serviceId": 2,
-      "name": "Home Loan",
-      "category": "Retail",
-      "rate": 7.5,
-      "desc": "Build your dream house today with low monthly installments",
-      "img": "public/service1.png",
-      "popular": true,
-      "termMonths": 240,
-      "minAmount": 50000,
-      "quantity": 1,
-      "id": 1
-    }
-  ]
+  "cart": []
 }

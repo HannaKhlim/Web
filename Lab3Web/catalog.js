@@ -18,7 +18,6 @@ const filters = {
 
 const container = document.getElementById('services-container');
 
-// ── Toast ────────────────────────────────────────────────────────
 function showToast(msg) {
   const t = document.createElement('div');
   t.className = 'toast';
@@ -28,7 +27,6 @@ function showToast(msg) {
   setTimeout(() => t.remove(), 2500);
 }
 
-// ── Build query params ───────────────────────────────────────────
 function buildParams() {
   const p = new URLSearchParams();
   if (filters.q)              p.set('q',        filters.q);
@@ -43,7 +41,6 @@ function buildParams() {
   return p;
 }
 
-// ── Fetch & Render ───────────────────────────────────────────────
 async function fetchAndRender() {
   try {
     const res = await fetch(`${API_URL}/services?${buildParams()}`);
@@ -83,7 +80,6 @@ function renderCards(data) {
   });
 }
 
-// ── Pagination ───────────────────────────────────────────────────
 function renderPagination() {
   const el = document.getElementById('pagination');
   if (!el) return;
@@ -105,7 +101,6 @@ function renderPagination() {
   makeBtn('→', currentPage + 1, currentPage === totalPages);
 }
 
-// ── Categories (Set) ─────────────────────────────────────────────
 async function loadCategories() {
   const res = await fetch(`${API_URL}/services`);
   const all  = await res.json();
@@ -138,7 +133,6 @@ function renderCategoryButtons() {
   categories.forEach(cat => addCatBtn(cat, cat));
 }
 
-// ── Array-method buttons ─────────────────────────────────────────
 function setupMethodButtons() {
   const methods = [
     {
@@ -238,7 +232,6 @@ function setupMethodButtons() {
   });
 }
 
-// ── Favourites & Cart ────────────────────────────────────────────
 async function addToFavorites(item) {
   const existing = await (await fetch(`${API_URL}/favorites?serviceId=${item.id}`)).json();
   if (existing.length) { showToast('Already in favourites!'); return; }
@@ -279,7 +272,6 @@ async function addToCart(item) {
   }
 }
 
-// ── Event listeners ──────────────────────────────────────────────
 document.getElementById('searchInput').addEventListener('input', e => {
   filters.q   = e.target.value;
   currentPage = 1;
@@ -312,7 +304,6 @@ document.getElementById('rateMax').addEventListener('input', e => {
   fetchAndRender();
 });
 
-// ── Init ─────────────────────────────────────────────────────────
 async function init() {
   await loadCategories();
   setupMethodButtons();

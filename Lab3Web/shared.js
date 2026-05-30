@@ -1,5 +1,3 @@
-// shared.js — auth state & nav update (included on every page)
-
 function getCurrentUser() {
   try {
     return JSON.parse(localStorage.getItem('currentUser')) || null;

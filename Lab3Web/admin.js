@@ -9,7 +9,6 @@ function showToast(msg) {
 function showError(id, msg) { const el = document.getElementById(id); if (el) el.textContent = msg; }
 function clearError(id)     { showError(id, ''); }
 
-// ── Guard ─────────────────────────────────────────────────────────
 function checkAdmin() {
   const user = getCurrentUser();
   if (!user || user.role !== 'admin') {
@@ -22,7 +21,6 @@ function checkAdmin() {
   return true;
 }
 
-// ── Tabs ──────────────────────────────────────────────────────────
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -33,7 +31,6 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   });
 });
 
-// ══════════ SERVICES ══════════════════════════════════════════════
 const svcFields = ['name','category','rate','amount','term','desc','img'];
 
 function validateSvcForm() {
@@ -146,7 +143,6 @@ async function deleteService(id) {
   loadServicesTable();
 }
 
-// ══════════ REVIEWS ═══════════════════════════════════════════════
 async function loadAdminReviews() {
   const svcId    = document.getElementById('filter-rev-service').value;
   const userId   = document.getElementById('filter-rev-user').value;
@@ -197,7 +193,6 @@ async function loadUserFilter() {
   users.forEach(u => sel.insertAdjacentHTML('beforeend', `<option value="${u.id}">${u.nickname}</option>`));
 }
 
-// ── Init ──────────────────────────────────────────────────────────
 if (checkAdmin()) {
   loadServicesTable();
   loadUserFilter();

@@ -1,6 +1,5 @@
 ﻿const API_URL = 'http://localhost:3000';
 
-// ── Top-100 common passwords ──────────────────────────────────────
 const COMMON_PASSWORDS = new Set([
   '123456','password','123456789','12345678','12345','1234567','password1',
   'iloveyou','admin','welcome','monkey','login','abc123','starwars','dragon',
@@ -13,7 +12,6 @@ const COMMON_PASSWORDS = new Set([
   'pass1234','11111111','55555555','baseball','zxcvbnm','abc12345','123qwe',
 ]);
 
-// ── Validators ────────────────────────────────────────────────────
 function validateEmail(v) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? '' : 'Enter a valid email address';
 }
@@ -53,7 +51,6 @@ function showToast(msg) {
   setTimeout(() => t.remove(), 2500);
 }
 
-// ── Tabs ──────────────────────────────────────────────────────────
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -64,7 +61,6 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   });
 });
 
-// ── Password mode toggle ──────────────────────────────────────────
 document.querySelectorAll('[name="pwMode"]').forEach(r => {
   r.addEventListener('change', () => {
     const manual = document.querySelector('[name="pwMode"]:checked').value === 'manual';
@@ -73,7 +69,6 @@ document.querySelectorAll('[name="pwMode"]').forEach(r => {
   });
 });
 
-// ── Nickname generation ───────────────────────────────────────────
 let nickAttempts  = 0;
 const MAX_AUTO    = 5;
 
@@ -105,7 +100,6 @@ document.getElementById('btn-regen').addEventListener('click', () => {
   validateAll();
 });
 
-// Auto-generate on name input
 ['reg-firstName', 'reg-lastName'].forEach(id => {
   document.getElementById(id).addEventListener('input', () => {
     if (nickAttempts < MAX_AUTO) {
@@ -116,10 +110,8 @@ document.getElementById('btn-regen').addEventListener('click', () => {
   });
 });
 
-// Prevent paste in confirm password
 document.getElementById('reg-confirm').addEventListener('paste', e => e.preventDefault());
 
-// ── Live validation ───────────────────────────────────────────────
 function getIsManual() {
   return document.querySelector('[name="pwMode"]:checked').value === 'manual';
 }
@@ -170,13 +162,11 @@ function validateAll() {
   return ok;
 }
 
-// Attach live validation to all register fields
 ['reg-email','reg-phone','reg-birthDate','reg-password','reg-confirm','reg-nickname'].forEach(id => {
   document.getElementById(id).addEventListener('input', validateAll);
 });
 document.getElementById('reg-agree').addEventListener('change', validateAll);
 
-// ── LOGIN ─────────────────────────────────────────────────────────
 document.getElementById('login-form').addEventListener('submit', async e => {
   e.preventDefault();
   const identity = document.getElementById('login-identity').value.trim();
@@ -209,14 +199,12 @@ document.getElementById('login-form').addEventListener('submit', async e => {
   });
 });
 
-// ── REGISTER ─────────────────────────────────────────────────────
 document.getElementById('register-form').addEventListener('submit', async e => {
   e.preventDefault();
   if (!validateAll()) return;
 
   const nickname = document.getElementById('reg-nickname').value.trim();
 
-  // Check nickname uniqueness
   const existing = await (await fetch(`${API_URL}/users?nickname=${encodeURIComponent(nickname)}`)).json();
   if (existing.length) {
     showError('err-nickname', 'This nickname is already taken');

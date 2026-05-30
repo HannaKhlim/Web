@@ -19,7 +19,6 @@ function showError(id, msg) {
 }
 function clearError(id) { showError(id, ''); }
 
-// ── Star rating ──────────────────────────────────────────────────
 document.querySelectorAll('#star-rating span').forEach(star => {
   star.addEventListener('click', () => {
     selectedRating = parseInt(star.dataset.val);
@@ -32,14 +31,12 @@ document.querySelectorAll('#star-rating span').forEach(star => {
   });
 });
 
-// ── Text counter ─────────────────────────────────────────────────
 document.getElementById('rev-text').addEventListener('input', () => {
   const len = document.getElementById('rev-text').value.trim().length;
   document.getElementById('hint-rev-text').textContent = `${len} / ${MIN_TEXT}`;
   validateReviewForm();
 });
 
-// ── Load services ────────────────────────────────────────────────
 async function loadServices() {
   const res   = await fetch(`${API_URL}/services`);
   allServices = await res.json();
@@ -52,7 +49,6 @@ async function loadServices() {
   });
 }
 
-// ── Service change — check purchase ──────────────────────────────
 document.getElementById('rev-service').addEventListener('change', async () => {
   const sId  = parseInt(document.getElementById('rev-service').value);
   const user = getCurrentUser();
@@ -68,7 +64,6 @@ document.getElementById('rev-service').addEventListener('change', async () => {
   validateReviewForm();
 });
 
-// ── Validate form ─────────────────────────────────────────────────
 function validateReviewForm() {
   const user   = getCurrentUser();
   const sId    = document.getElementById('rev-service').value;
@@ -79,7 +74,6 @@ function validateReviewForm() {
   document.getElementById('btn-submit-review').disabled = !ok;
 }
 
-// ── Submit ────────────────────────────────────────────────────────
 document.getElementById('review-form').addEventListener('submit', async e => {
   e.preventDefault();
   const user = getCurrentUser();
@@ -112,7 +106,6 @@ document.getElementById('review-form').addEventListener('submit', async e => {
   loadReviews();
 });
 
-// ── Load & render reviews ─────────────────────────────────────────
 async function loadReviews(serviceId = '') {
   const url = serviceId
     ? `${API_URL}/feedback?serviceId=${serviceId}`
@@ -142,7 +135,6 @@ document.getElementById('filter-service').addEventListener('change', e => {
   loadReviews(e.target.value);
 });
 
-// ── Auth gate ─────────────────────────────────────────────────────
 function checkAuthGate() {
   const user = getCurrentUser();
   const note = document.getElementById('review-auth-note');
@@ -155,7 +147,6 @@ function checkAuthGate() {
   }
 }
 
-// ── Init ──────────────────────────────────────────────────────────
 async function init() {
   await loadServices();
   checkAuthGate();
