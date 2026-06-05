@@ -221,7 +221,6 @@ document.getElementById('register-form').addEventListener('submit', async e => {
     nickname,
     firstName:  document.getElementById('reg-firstName').value.trim(),
     lastName:   document.getElementById('reg-lastName').value.trim(),
-    patronymic: document.getElementById('reg-patronymic').value.trim(),
     email:      document.getElementById('reg-email').value.trim(),
     phone:      document.getElementById('reg-phone').value.trim(),
     birthDate:  document.getElementById('reg-birthDate').value,

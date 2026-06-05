@@ -1,4 +1,4 @@
-{
+﻿{
   "services": [
     {
       "id": 1,
@@ -223,6 +223,32 @@
       "id": 1
     },
     {
+      "serviceId": 4,
+      "name": "SME Business Loan",
+      "category": "SME",
+      "rate": 11,
+      "desc": "Empowering small businesses with capital to grow and expand",
+      "img": "public/service3.png",
+      "popular": true,
+      "termMonths": 84,
+      "minAmount": 20000,
+      "id": 3
+    },
+    {
+      "serviceId": 8,
+      "name": "Women Entrepreneur Loan",
+      "category": "SME",
+      "rate": 8.5,
+      "desc": "Special financial support and low rates for women-led businesses",
+      "img": "public/service4.png",
+      "popular": true,
+      "termMonths": 60,
+      "minAmount": 10000,
+      "id": 4
+    }
+  ],
+  "cart": [
+    {
       "serviceId": 3,
       "name": "Auto Loan",
       "category": "Retail",
@@ -232,8 +258,60 @@
       "popular": false,
       "termMonths": 72,
       "minAmount": 10000,
+      "quantity": 1,
+      "id": 1
+    },
+    {
+      "serviceId": 8,
+      "name": "Women Entrepreneur Loan",
+      "category": "SME",
+      "rate": 8.5,
+      "desc": "Special financial support and low rates for women-led businesses",
+      "img": "public/service4.png",
+      "popular": true,
+      "termMonths": 60,
+      "minAmount": 10000,
+      "quantity": 4,
       "id": 2
     }
+  ]
+,
+  "users": [
+    {
+      "id": 1,
+      "nickname": "admin",
+      "firstName": "Admin",
+      "lastName": "User",
+      "patronymic": "",
+      "email": "admin@ipdc.com",
+      "phone": "+375291234567",
+      "birthDate": "1990-01-01",
+      "password": "Admin@123!",
+      "role": "admin",
+      "createdAt": "2026-01-01"
+    }
   ],
-  "cart": []
+  "feedback": [
+    {
+      "id": 1,
+      "serviceId": 1,
+      "serviceName": "Personal Loan",
+      "userId": 2,
+      "userNickname": "MarKo456",
+      "rating": 5,
+      "text": "Очень быстрое одобрение заявки — деньги пришли уже на следующий день. Ставка оказалась ниже, чем я ожидал. Рекомендую всем!",
+      "createdAt": "2026-04-12T10:23:00.000Z"
+    },
+    {
+      "id": 2,
+      "serviceId": 2,
+      "serviceName": "Home Loan",
+      "userId": 3,
+      "userNickname": "AnnSm89",
+      "rating": 4,
+      "text": "Брали ипотеку на квартиру. Процесс оформления занял около недели, но всё прошло без лишних вопросов. Менеджеры всегда на связи и отвечают чётко.",
+      "createdAt": "2026-05-03T14:47:00.000Z"
+    }
+  ],
+  "orders": []
 }

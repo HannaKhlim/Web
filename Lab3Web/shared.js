@@ -14,6 +14,11 @@ function setCurrentUser(user) {
   }
 }
 
+function logout() {
+  setCurrentUser(null);
+  window.location.href = 'finance.html';
+}
+
 function updateNav() {
   const user    = getCurrentUser();
   const authEl  = document.getElementById('nav-auth');
@@ -21,7 +26,8 @@ function updateNav() {
 
   if (authEl) {
     authEl.innerHTML = user
-      ? `<a href="auth.html">${user.nickname}</a>`
+      ? `<a href="auth.html">${user.nickname}</a>
+         <a href="#" onclick="logout();return false;" style="color:#ed017f;margin-left:8px" title="Sign out">✕</a>`
       : '<a href="auth.html">SIGN IN</a>';
   }
   if (adminEl) {
